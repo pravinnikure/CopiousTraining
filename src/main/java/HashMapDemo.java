@@ -27,6 +27,8 @@ public class HashMapDemo
         {
             int key = student.getKey();
             Student s = student.getValue();
+
+
             System.out.println(key+" "+"Student Details:");
             System.out.println(s.rollno+" "+s.name+" "+s.age);
         }
