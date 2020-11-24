@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 
@@ -34,6 +35,21 @@ public class HashSetDemo
             System.out.println(itre.next());
         }
 
+        //HashSet from UserrDefined class
+        HashSet<Student> hash = new HashSet<Student>();
+        Student s1 = new Student(2,"Avi",44);
+        Student s2 = new Student(1,"Ravi",41);
+        Student s3 = new Student(4,"Sham",43);
+
+        hash.add(s1);
+        hash.add(s2);
+        hash.add(s3);
+
+        for(Student s : hash){
+
+            System.out.println(s.rollno+" "+s.name+" "+s.age);
+
+        }
 
     }
 }
