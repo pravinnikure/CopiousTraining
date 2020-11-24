@@ -21,8 +21,9 @@ public class LinkedListDemo
             System.out.println(itr.next());
         }
         list.add(1,"Z");
-        System.out.println(list);
+        list.remove("Z")
 
+        System.out.println(list);
 
 
     }
