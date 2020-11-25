@@ -2,28 +2,35 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.sql.SQLOutput;
 import java.util.*;
+import java.util.function.Consumer;
 
 public class ArrayListDemo
 {
     public static void main(String[] args)
     {
         List<Integer> values = Arrays.asList(1,3,2,4,5,6);
-        for(int i=0;i<values.size();i++)
-        {
-            System.out.println(i);
-        }
-        Iterator<Integer> itr = values.iterator();
-        while(itr.hasNext())
-        {
-            System.out.println(itr.next());
-        }
-        for(int i:values)
-        {
-            System.out.println(i);
-        }
+
+        //Java 8 call by method feature
+        values.forEach(System.out::println);
+
+    //Deffrent way to iterate arraylist
+//        for(int i=0;i<values.size();i++)
+//        {
+//            System.out.println(i);
+//        }
+//        Iterator<Integer> itr = values.iterator();
+//        while(itr.hasNext())
+//        {
+//            System.out.println(itr.next());
+//        }
+//        for(int i:values)
+//        {
+//            System.out.println(i);
+//        }
 
 
 
+//        #Earlier code
         //        ArrayList<Integer> list = new ArrayList();
 //
 //        list.add(1);
