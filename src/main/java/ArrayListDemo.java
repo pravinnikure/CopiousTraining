@@ -15,10 +15,9 @@ public class ArrayListDemo
             values.add(i);
         }
         System.out.println(values.stream()
-                .filter(i->i%100==0)
-                .map(i->i*2)
-                .findFirst()
-                .orElse(0));
+                .filter(i->i%5==0)
+                .map(i->i*2).findAny()
+                );
 
         System.out.println(values.stream().map(i-> i*2).reduce(0,Integer::sum));
 //
