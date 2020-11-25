@@ -9,11 +9,20 @@ public class ArrayListDemo
     public static void main(String[] args)
     {
         List<Integer> values = new ArrayList<>();
-        for(int i=0;i<20;i++)
+        
+        for(int i=1;i<20;i++)
         {
             values.add(i);
         }
+        System.out.println(values.stream()
+                .filter(i->i%100==0)
+                .map(i->i*2)
+                .findFirst()
+                .orElse(0));
+
         System.out.println(values.stream().map(i-> i*2).reduce(0,Integer::sum));
+//
+
         //Java 8 call by method feature
 
 
