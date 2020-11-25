@@ -8,10 +8,14 @@ public class ArrayListDemo
 {
     public static void main(String[] args)
     {
-        List<Integer> values = Arrays.asList(1,3,2,4,5,6);
-
+        List<Integer> values = new ArrayList<>();
+        for(int i=0;i<20;i++)
+        {
+            values.add(i);
+        }
+        System.out.println(values.stream().map(i-> i*2).reduce(0,Integer::sum));
         //Java 8 call by method feature
-        values.forEach(System.out::println);
+
 
     //Deffrent way to iterate arraylist
 //        for(int i=0;i<values.size();i++)
