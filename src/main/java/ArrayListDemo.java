@@ -3,6 +3,7 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class ArrayListDemo
@@ -33,12 +34,24 @@ public class ArrayListDemo
         long count = strings.parallelStream().filter(string -> string.isEmpty()).count();
         System.out.println(count);
 
+        //Collector use
+        List<String> strings1 = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+        List<String> filtered = strings1.stream()
+                .filter(string -> !string.isEmpty())
+                .collect(Collectors.toList());
+        System.out.println(filtered);
 
-//get count of empty string
+
+        System.out.println("Filtered List: " + filtered);
+        String mergedString = strings1.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+        System.out.println("Merged String: " + mergedString);
+
+        //Statistics
+        List numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+        IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> (int) x).summaryStatistics();
+        System.out.println(stats.getAverage());
 
 
-
-        //
 
         //Java 8 call by method feature
 
