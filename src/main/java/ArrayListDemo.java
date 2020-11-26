@@ -3,6 +3,7 @@ import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.stream.Collectors;
 
 public class ArrayListDemo
 {
@@ -14,13 +15,30 @@ public class ArrayListDemo
         {
             values.add(i);
         }
+        Random random = new Random();
+
         System.out.println(values.stream()
                 .filter(i->i%5==0)
                 .map(i->i*2).findAny()
                 );
 
         System.out.println(values.stream().map(i-> i*2).reduce(0,Integer::sum));
-//
+
+        List<Integer> num = Arrays.asList(1,2,13,3,4,5);
+        List<Integer> num2 = num.stream().filter(i->i%2!=0).map(i -> i*i).sorted().distinct().collect(Collectors.toList());
+        System.out.println(num2);
+
+        //get count of empty string
+        List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd","", "jkl");
+        long count = strings.parallelStream().filter(string -> string.isEmpty()).count();
+        System.out.println(count);
+
+
+//get count of empty string
+
+
+
+        //
 
         //Java 8 call by method feature
 
