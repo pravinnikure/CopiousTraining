@@ -39,7 +39,10 @@ public class EmpStreams
 //                                    .map(p->p.salary).collect(Collectors.toList());
 //        System.out.println(employees);
 
-
+        //Summing using Collectors
+        double total2 = list.stream().
+                collect(Collectors.summingDouble(e->e.salary));
+        System.out.println(total2);
 
     }
 }
