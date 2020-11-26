@@ -32,6 +32,8 @@ public class EmpStreams
                 .filter(employe -> employe.salary>5000)
                 .forEach(employee->System.out.println(employee.empId+" "+employee.name+" "));
 
+        Double totalSal = list.stream().map(j->j.salary).reduce(0.0,Double::sum);
+        System.out.println("Total salay to pay:"+totalSal);
 //        List<Double> employees = list.stream()
 //                                   .filter(i ->i.salary>5000)
 //                                    .map(p->p.salary).collect(Collectors.toList());
