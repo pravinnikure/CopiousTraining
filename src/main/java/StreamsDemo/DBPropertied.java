@@ -1,15 +1,20 @@
 package StreamsDemo;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Properties;
 
 public class DBPropertied
 {
-    public static void main(String[] args) throws Exception {
-        FileReader reader =new FileReader("db.properties");
+    public static void main(String[] args)throws Exception{
 
-        Properties prop = new Properties();
-        prop.load(reader);
-        System.out.println(prop.getProperty("user"));
-        System.out.println(prop.getProperty("password"));
+        Properties p=new Properties();
+
+        p.setProperty("name","Pravin");
+        p.setProperty("email","pravin@gmail.com");
+
+        p.store(new FileWriter("info.properties"),"Properties Example");
+
+
+
     }
 }
