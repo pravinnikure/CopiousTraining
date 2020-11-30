@@ -1,5 +1,6 @@
 package Exceptions;
 
+
 class InvalidAgeException extends Exception
 {
     public InvalidAgeException(String s)
@@ -8,7 +9,6 @@ class InvalidAgeException extends Exception
         super(s);
     }
 }
-
 public class TestAgeException
 {
     void ageCheck(int age) throws InvalidAgeException{
